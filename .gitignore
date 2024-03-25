@@ -1,0 +1,6 @@
+# Database local files
+data/
+
+# local env files
+.env*.local
+.env

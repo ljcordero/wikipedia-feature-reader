@@ -1,0 +1,40 @@
+services:
+  db:
+    container_name: db
+    image: postgres:16.2
+    environment:
+      POSTGRES_DB: "${DATABASE_NAME}"
+      POSTGRES_USER: "${DATABASE_USER}"
+      POSTGRES_PASSWORD: "${DATABASE_PASSWORD}"
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    ports:
+      - target: 5432
+        published: ${DATABASE_PORT}
+  api:
+    container_name: api
+    env_file: ./api/.env
+    build:
+      context: ./api/
+      dockerfile: Dockerfile
+    environment:
+      - PORT=${API_PORT}
+      - DATABASE_HOST=db
+    ports:
+      - target: ${API_PORT}
+        published: ${API_PORT}
+    depends_on:
+      - db
+  webapp:
+    container_name: webapp
+    env_file: ./webapp/.env
+    build:
+      context: ./webapp/
+      dockerfile: Dockerfile
+    environment:
+      - API_URL=api:${API_PORT}
+    ports:
+      - target: 3000
+        published: ${WEBAPP_PORT}
+    depends_on:
+      - api

@@ -5,6 +5,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import Configuration from './config/configuration';
 import typeormFactory from './config/typeorm';
+import { RequestLoggerMiddlewareModule } from './middlewares/request-logger-middleware/request-logger-middleware.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import typeormFactory from './config/typeorm';
       useFactory: typeormFactory,
       inject: [ConfigService],
     }),
+    RequestLoggerMiddlewareModule,
   ],
   controllers: [AppController],
   providers: [AppService],

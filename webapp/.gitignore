@@ -8,6 +8,10 @@
 
 # testing
 /coverage
+/.nyc_output
+cypress.env.json
+cypress/videos
+cypress/screenshots
 
 # next.js
 /.next/

@@ -4,12 +4,15 @@ import { ConfigService } from '@nestjs/config';
 import { ValidationPipe } from '@nestjs/common';
 import { useContainer } from 'class-validator';
 import { HttpExceptionFilter } from './filters/http-exception.filter';
+import { ResponseTransformInterceptor } from './interceptors/response-transform.interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   useContainer(app.select(AppModule), { fallbackOnErrors: true });
   app.useGlobalPipes(new ValidationPipe());
+
+  app.useGlobalInterceptors(new ResponseTransformInterceptor());
 
   app.useGlobalFilters(new HttpExceptionFilter());
 

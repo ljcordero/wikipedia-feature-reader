@@ -2,7 +2,7 @@ import { HttpService } from '@nestjs/axios';
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { firstValueFrom } from 'rxjs';
-import LibreTranslateSupportedLanguageDto from './dtos/libre-translate-supported-language.dto';
+import { LibreTranslateSupportedLanguageDto } from './dtos/libre-translate-supported-language.dto';
 
 @Injectable()
 export class LibreTranslateService {

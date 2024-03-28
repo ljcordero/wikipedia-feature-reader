@@ -38,10 +38,11 @@ jobs:
       - name: Lint
         run: |
           npm run lint
-      - name: Copy .env
-        run: |
-          cp .env.sample .env
       - name: Test
+        env:
+          WIKIPEDIA_API_URL: https://api.wikimedia.org
+          LIBRE_TRANSLATE_API_URL: https://libretranslate.com
+          LIBRE_TRANSLATE_API_KEY: ${{ secrets.LIBRE_TRANSLATE_API_KEY }}
         run: |
           npm run test
       - name: Test e2e

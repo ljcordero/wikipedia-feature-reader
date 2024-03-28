@@ -33,5 +33,7 @@ export const useGetWikipediaFeeds = ({
     staleTime: Infinity,
     enabled: enabled,
     retry: false,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
   });
 };

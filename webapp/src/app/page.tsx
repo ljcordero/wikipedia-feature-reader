@@ -44,11 +44,12 @@ export default function Home() {
 
   const visitedFeeds = useSelector(getVisitedFeeds);
 
-  const { data, fetchNextPage, isLoading, isFetching, error } = useGetWikipediaFeeds({
-    date: wikipediaFeedRequestDto?.date || new Date(),
-    language: wikipediaFeedRequestDto?.language || "",
-    enabled: !!wikipediaFeedRequestDto,
-  });
+  const { data, fetchNextPage, isLoading, isFetching, error } =
+    useGetWikipediaFeeds({
+      date: wikipediaFeedRequestDto?.date || new Date(),
+      language: wikipediaFeedRequestDto?.language || "",
+      enabled: !!wikipediaFeedRequestDto,
+    });
 
   const displayFormatOptions = [
     FeedsContainerDisplayFormatOptions.FOUR_FEEDS_PER_ROW,
@@ -85,7 +86,12 @@ export default function Home() {
   };
 
   if (error) {
-    toast.current?.replace({severity: 'error', summary: 'Error', detail: error.message, life: TOAST_LIFE_MILLISECONDS});
+    toast.current?.replace({
+      severity: "error",
+      summary: "Error",
+      detail: error.message,
+      life: TOAST_LIFE_MILLISECONDS,
+    });
   }
 
   return (

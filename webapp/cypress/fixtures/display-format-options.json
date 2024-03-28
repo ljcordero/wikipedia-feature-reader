@@ -1,0 +1,5 @@
+[
+  {"icon": "4_grids_icon", "class": "md:col-3"},
+  {"icon": "3_grids_icon", "class": "md:col-4"},
+  {"icon": "2_grids_icon", "class": "md:col-6"}
+]

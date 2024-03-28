@@ -15,17 +15,19 @@ export const validateFeedCardContentMatch = (
   feedCard: HTMLElement,
   feed: WikipediaFeed,
 ) => {
-  expect(feedCard.querySelector('[data-pc-section="title"]')?.textContent).toEqual(feed.title);
-  expect(feedCard.querySelector('[data-pc-section="subtitle"]')?.textContent).toEqual(feed.description);
+  expect(
+    feedCard.querySelector('[data-pc-section="title"]')?.textContent,
+  ).toEqual(feed.title);
+  expect(
+    feedCard.querySelector('[data-pc-section="subtitle"]')?.textContent,
+  ).toEqual(feed.description);
 
   const CONTENT = expect(feedCard.querySelector('[data-pc-section="content"]'));
   CONTENT.toHaveTextContent(replaceNewLinesWith(feed.extract, " "));
 
   const FOOTER = expect(feedCard.querySelector('[data-pc-section="footer"]'));
   FOOTER.toHaveTextContent(feed.type);
-  FOOTER.toHaveTextContent(
-    new Date(feed.lastEditedDate).toLocaleDateString(),
-  );
+  FOOTER.toHaveTextContent(new Date(feed.lastEditedDate).toLocaleDateString());
 
   if (feed.visited) {
     CONTENT.not.toHaveTextContent("unread");

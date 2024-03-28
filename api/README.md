@@ -8,6 +8,17 @@
 
 - Node.js 21
 
+## 📝 Libraries / frameworks used
+
+- prettier: code formatter
+- jest: testing framework
+- eslint: static code analysis to identify problematic patterns and keep code consistency
+- axios: HTTP Client to consume external services
+- class-transformer: object transformer
+- class-validator: validator to enforce rules for all incoming client payloads
+- pg: PostgreSQL client for Node.js
+- typeorm: ORM for PostgreSQL database
+
 ## 🔨 Installation
 
 ```bash

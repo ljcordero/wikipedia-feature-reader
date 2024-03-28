@@ -9,6 +9,27 @@
 
 - Node.js 21
 
+## 📝 Libraries / frameworks used
+
+- prettier: code formatter
+- jest: testing framework
+- eslint: static code analysis to identify problematic patterns and keep code consistency
+- cypress: next generation front end testing framework (e2e)
+- @reduxjs/toolkit: library with set of utilities and conventions for writing Redux logic
+- @tanstack/react-query: data state management library
+- primeflex: lightweight responsive CSS utility library
+- primeicons: font icon library
+- primereact: UI Components framework for React
+- react-error-boundary: errors tree catcher to display a fallback UI
+- react-flagkit: flag icons library
+- react-infinite-scroller: infinite scroller component to load a grid of items in React
+- react-loading-overlay-ts: TS UI component for suspence state
+- ts-debounce: utility for preventing a function from executing too frequently
+- @faker-js/faker: library to generate fake (but reasonable) data (testing)
+- jsdom: library that provides custom DOM element matchers for Jest
+- autoprefixer: parse CSS and add vendor prefixes to CSS rules
+- identity-obj-proxy: trivial webpack imports, used for jest css mapping
+
 ## 🔨 Installation
 
 ```bash
@@ -42,5 +63,12 @@ npm run start
 ## 🧪 Test
 
 ```bash
+# unit tests
+$ npm run test
 
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov
 ```

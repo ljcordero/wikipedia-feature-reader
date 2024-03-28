@@ -26,6 +26,9 @@ cp .env.sample .env
 
 **Make sure to edit the new `.env` file accordingly**
 
+- Add the `.env` file in the [api](/api/README.md) folder
+- Add the `.env` file in the [webapp](/webapp/README.md) folder
+
 ```bash
 docker compose up
 ```

@@ -112,6 +112,7 @@ export default function Home() {
           </div>
           <SearchPanel
             testId="search-panel"
+            value={wikipediaFeedRequestDto}
             onSearch={onSearchHandler}
           ></SearchPanel>
           <FeedsContainerDisplayFormat

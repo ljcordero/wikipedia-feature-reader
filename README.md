@@ -32,4 +32,7 @@ docker compose up
 
 ## Assumptions or limitations
 
-- Need to mock nest typeorm database module to run e2e tests isolated (github workflow)
+- Api
+  - Need to mock nest typeorm database module to run e2e tests isolated (github workflow)
+- Webapp
+  - Mock api to run cypress e2e tests or provide preview deployment and run cypress against it

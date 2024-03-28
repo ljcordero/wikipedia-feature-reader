@@ -1,5 +1,6 @@
 "use client";
 
+import { GetWikipediaFeedRequestDto } from "@/lib/services";
 import { LanguageDropdown } from "../../../components/molecules";
 import {
   LIBRE_TRANSLATE_API_SUPPORTED_LANGUAGES,
@@ -13,10 +14,11 @@ import { useState } from "react";
 
 export type SearchPanelProps = {
   testId?: string;
+  value?: GetWikipediaFeedRequestDto;
   onSearch: (language: LibreTranslateApiSupportedLanguage, date: Date) => void;
 };
 
-export const SearchPanel = ({ testId, onSearch }: SearchPanelProps) => {
+export const SearchPanel = ({ testId, value, onSearch }: SearchPanelProps) => {
   const [selectedLanguage, setSelectedLanguage] = useState<
     LibreTranslateApiSupportedLanguage | undefined
   >(undefined);
@@ -28,6 +30,11 @@ export const SearchPanel = ({ testId, onSearch }: SearchPanelProps) => {
 
   const MIN_DATE = yearsBefore(new Date(), 1);
   const MAX_DATE = yesterday();
+
+  const SEARCH_BUTTON_DISABLED =
+    !selectedLanguage ||
+    !selectedDate ||
+    (value?.language == selectedLanguage?.code && value.date == selectedDate);
 
   const onSearchClickHandler = () => {
     if (selectedLanguage && selectedDate) {
@@ -67,7 +74,7 @@ export const SearchPanel = ({ testId, onSearch }: SearchPanelProps) => {
           data-testid={`${testId}-search-button`}
           className="h-3rem"
           label="Search"
-          disabled={!selectedLanguage || !selectedDate}
+          disabled={SEARCH_BUTTON_DISABLED}
           onClick={onSearchClickHandler}
         />
       </div>

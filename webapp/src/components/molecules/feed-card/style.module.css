@@ -1,0 +1,27 @@
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card :global .p-card-body {
+  display: flex;
+  flex: 1;  
+  flex-direction: column;
+}
+
+.card :global .p-card-body .p-card-content {
+  flex: 1;
+}
+
+.text {
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 8;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  margin: 0;
+}
+
+.badge {
+  top: 10px;
+  right: 25px;
+}

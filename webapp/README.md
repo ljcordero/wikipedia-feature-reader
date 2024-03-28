@@ -67,12 +67,13 @@ npm run start
 npm run test
 
 # e2e tests
+npm run test:e2e
 
-# first time configure cypress env
+#############################################################
+# first time cypress configuration env
 cp cypress.env.json.sample cypress.env.json
 # make sure to edit the new cypress.env.json file accordingly
-
-npm run test:e2e
+#############################################################
 
 # test coverage
 npm run test:cov

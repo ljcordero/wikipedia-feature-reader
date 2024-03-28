@@ -26,7 +26,10 @@ cp .env.sample .env
 
 **Make sure to edit the new `.env` file accordingly**
 
-
 ```bash
 docker compose up
 ```
+
+## Assumptions or limitations
+
+- Need to mock nest typeorm database module to run e2e tests isolated (github workflow)

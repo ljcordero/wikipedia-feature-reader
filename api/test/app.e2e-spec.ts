@@ -40,12 +40,15 @@ describe('e2e', () => {
       .expect(200)
       .expect((res) => {
         const feed = res.body as FeedResponseDto;
+        expect(feed.id).toBeDefined();
+        expect(feed.id).not.toBeNaN();
         expect(feed.title).toBeDefined();
+        expect(feed.type).toBeDefined();
         expect(feed.description).toBeDefined();
         expect(feed.extract).toBeDefined();
-        expect(feed.lastEditedDate).toBeDefined();
         expect(feed.url).toBeDefined();
-        expect(feed.thumbnail).toBeDefined();
+        expect(feed.lastEditedDate).toBeDefined();
+        expect(new Date(feed.lastEditedDate).getTime()).not.toBeNaN();
       });
   };
 

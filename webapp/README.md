@@ -29,6 +29,7 @@
 - jsdom: library that provides custom DOM element matchers for Jest
 - autoprefixer: parse CSS and add vendor prefixes to CSS rules
 - identity-obj-proxy: trivial webpack imports, used for jest css mapping
+- sharp: convert large images in common formats to smaller
 
 ## 🔨 Installation
 

@@ -12,7 +12,8 @@ FROM node:21-alpine3.18 AS runtime
 
 WORKDIR /usr/app
 
-COPY --from=build /usr/app/.next/standalone ./
 COPY --from=build /usr/app/public ./public
+COPY --from=build /usr/app/.next/standalone ./
+COPY --from=build /usr/app/.next/static ./.next/static
 
 CMD ["node", "server"]

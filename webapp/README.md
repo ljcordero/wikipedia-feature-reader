@@ -4,7 +4,6 @@
 
 [Next](https://github.com/vercel/next.js) Webapp for the wikipedia feature reader
 
-
 ## 🛠️ Requirements
 
 - Node.js 21
@@ -34,7 +33,7 @@
 ## 🔨 Installation
 
 ```bash
-$ npm install
+npm install
 ```
 
 ```bash
@@ -65,11 +64,17 @@ npm run start
 
 ```bash
 # unit tests
-$ npm run test
+npm run test
 
 # e2e tests
-$ npm run test:e2e
+npm run test:e2e
+
+#############################################################
+# first time cypress configuration env
+cp cypress.env.json.sample cypress.env.json
+# make sure to edit the new cypress.env.json file accordingly
+#############################################################
 
 # test coverage
-$ npm run test:cov
+npm run test:cov
 ```

@@ -2,5 +2,13 @@
   "extends": [
     "plugin:prettier/recommended",
     "next/core-web-vitals"
-  ]
+  ],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  }
 }
